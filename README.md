@@ -3,11 +3,10 @@ Reference from O'REILLY Japan 「ゼロから作る Deep Learning」
 
 ## Get started 
 ```shell
-$ sh open_python_default.sh
-
-# or
-
-$ docker run -it --rm -v $PWD/python/:/home/deep/ --workdir /home/deep python:3.7.3-stretch /bin/bash
+$ sh open_python_default.sh  ## start with python image
+### or ###
+$ docker build -t tkkrr/deep:latest .  ## Build docker image
+$ sh open_python_custom.sh  ## Start with custom python image
 ```
 
 ## Environment
@@ -19,3 +18,7 @@ $ docker run -it --rm -v $PWD/python/:/home/deep/ --workdir /home/deep python:3.
 + Python - 3.7.3-stretch
 + Pip - 19.0.3
 
+
+## Tips
+### `plt.show()`が実行できない
+これはDockerから提供されるものが仮想環境であるため，ホストでは表示されないからです．この問題を解決するためには仮想デスクトップ等の設定を行い，外部接続によってdocker環境上のGUIをホストで受け取るようにします．Docker環境上では正しく`plt.show()`が動作していることがわかります．
