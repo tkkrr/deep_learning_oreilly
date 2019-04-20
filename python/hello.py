@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
+from step.step import step_function
 
 # plt.rcParams['font.family'] = "Noto Sans CJK JP"
 plt.rcParams['font.family'] = "IPAexGothic"
@@ -17,16 +18,21 @@ plt.rcParams['font.family'] = "IPAexGothic"
 # trump.speak()
 
 x = np.arange(-3, 3, 0.1)
-y1 = np.sin(x)
-y2 = np.cos(x)
+# y1 = np.sin(x)
+# y2 = np.cos(x)
 
-plt.plot(x, y1, label="sin")
-plt.plot(x, y2, linestyle="dashed", label="cos")
+# plt.plot(x, y1, label="sin")
+# plt.plot(x, y2, linestyle="dashed", label="cos")
 
-plt.xlabel("横軸")
-plt.ylabel("縦軸")
+# plt.xlabel("横軸")
+# plt.ylabel("縦軸")
 
-plt.title("sin & cos")
-plt.legend()
+# plt.title("sin & cos")
+# plt.legend()
 
-plt.savefig('img/plots.png')
+# plt.savefig('img/plots.png')
+
+
+
+y = step_function(x)
+print(y)
